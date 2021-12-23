@@ -14,7 +14,7 @@ const Stouts: NextPage = () => {
   if (!data) return <div>Loading...</div>;
   return (
     <div>
-      <h1>Beers</h1>
+      <h1>Souts</h1>
       <main>
         {data.map((beerData: Beer) => {
           const { id, name, price } = beerData;
