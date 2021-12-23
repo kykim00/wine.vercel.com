@@ -2,8 +2,8 @@ export interface Wine {
   winery: string;
   wine: string;
   rating: {
-    average: string;
-    reviews: string;
+    average: number;
+    reviews: number;
   };
   location: string;
   image: string;
