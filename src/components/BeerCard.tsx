@@ -11,22 +11,32 @@ export const BeerCard = ({ beerData }: BeerProps) => {
       <Average>{rating.average ? rating.average.toFixed(1) : ""}</Average>
       <img src={image} alt="" />
       <Title>{name}</Title>
-      <p>{price}</p>
-      <p>{`${rating ? rating.reviews : ""} ratings`}</p>
+      <TextContainer>
+        <p>{price}</p>
+        <p>{`${rating ? rating.reviews : ""} ratings`}</p>
+      </TextContainer>
     </Container>
   );
 };
 const Container = styled.div`
+  position: relative;
   padding: 1em;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 1em;
   flex-direction: column;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  position: relative;
+  &:hover {
+    box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+    transform: translateY(-5px);
+    transition: all 0.5s ease;
+  }
 `;
-
+const TextContainer = styled.div`
+  flex: 2;
+  text-align: center;
+`;
 const Average = styled.span`
   position: absolute;
   left: 0;
@@ -41,4 +51,5 @@ const Average = styled.span`
 
 const Title = styled.h2`
   text-align: center;
+  flex: 3;
 `;
